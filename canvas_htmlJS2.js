@@ -3,6 +3,7 @@ var mode = 0;
 //retrieve node in DOM via ID                                                   
 var c = document.getElementById("slate");
 var b = document.getElementById("toggle");
+var clr = document.getElementById("clear");
 
                                                                                 
 //instantiate a CanvasRenderingCOntext2D object                                 
@@ -32,6 +33,10 @@ var addCircle = function(e) {
     return ctx.stroke();  
 };
 
+var clear = function() {
+    return ctx.clearRect(0, 0, 600, 600);
+};
+
 b.addEventListener("click", switchMode); 
 console.log(mode);
 
@@ -47,7 +52,8 @@ var checkMode = function(e) {
     }
 };
 
-c.addEventListener("click", checkMode); 
+c.addEventListener("click", checkMode);
+clr.addEventListener("click", clear); 
 
 
 
